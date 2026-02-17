@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 750" font-family="Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="1100" height="750" fill="#F8F9FA" rx="8"/>
+
+  <!-- Title -->
+  <text x="550" y="38" text-anchor="middle" font-size="20" font-weight="bold" fill="#1a1a2e">AdventureWorks Network Topology</text>
+  <text x="550" y="58" text-anchor="middle" font-size="11" fill="#666">VirtualBox Lab Environment — adventureworks.local</text>
+  <line x1="80" y1="68" x2="1020" y2="68" stroke="#ccc" stroke-width="1"/>
+
+  <!-- ===== MANAGEMENT VLAN ===== -->
+  <rect x="80" y="82" width="940" height="180" rx="6" fill="#EBF3FB" stroke="#4A90D9" stroke-width="1.5"/>
+  <text x="100" y="102" font-size="12" font-weight="bold" fill="#2C5F8A">MANAGEMENT VLAN — 10.0.1.0/24</text>
+
+  <!-- DC01 -->
+  <rect x="160" y="115" width="130" height="115" rx="5" fill="#fff" stroke="#4A90D9" stroke-width="1.2"/>
+  <rect x="160" y="115" width="130" height="28" rx="5" fill="#4A90D9"/>
+  <rect x="160" y="135" width="130" height="8" fill="#4A90D9"/>
+  <text x="225" y="133" text-anchor="middle" font-size="11" font-weight="bold" fill="#fff">DC01</text>
+  <rect x="175" y="152" width="100" height="6" rx="2" fill="#D0E8F5"/>
+  <rect x="175" y="163" width="100" height="6" rx="2" fill="#D0E8F5"/>
+  <rect x="175" y="174" width="100" height="6" rx="2" fill="#D0E8F5"/>
+  <text x="225" y="200" text-anchor="middle" font-size="10" fill="#333">10.0.1.10</text>
+  <text x="225" y="213" text-anchor="middle" font-size="9" fill="#666">Domain Controller</text>
+  <text x="225" y="224" text-anchor="middle" font-size="9" fill="#888">AD · DNS · DHCP</text>
+
+  <!-- FS01 -->
+  <rect x="480" y="115" width="130" height="115" rx="5" fill="#fff" stroke="#4A90D9" stroke-width="1.2"/>
+  <rect x="480" y="115" width="130" height="28" rx="5" fill="#4A90D9"/>
+  <rect x="480" y="135" width="130" height="8" fill="#4A90D9"/>
+  <text x="545" y="133" text-anchor="middle" font-size="11" font-weight="bold" fill="#fff">FS01</text>
+  <rect x="495" y="152" width="100" height="6" rx="2" fill="#D0E8F5"/>
+  <rect x="495" y="163" width="100" height="6" rx="2" fill="#D0E8F5"/>
+  <rect x="495" y="174" width="100" height="6" rx="2" fill="#D0E8F5"/>
+  <text x="545" y="200" text-anchor="middle" font-size="10" fill="#333">10.0.1.11</text>
+  <text x="545" y="213" text-anchor="middle" font-size="9" fill="#666">File Server</text>
+  <text x="545" y="224" text-anchor="middle" font-size="9" fill="#888">SMB Shares · SQL Server</text>
+
+  <!-- LINUX01 -->
+  <rect x="800" y="115" width="130" height="115" rx="5" fill="#fff" stroke="#4A90D9" stroke-width="1.2"/>
+  <rect x="800" y="115" width="130" height="28" rx="5" fill="#5B8C5A"/>
+  <rect x="800" y="135" width="130" height="8" fill="#5B8C5A"/>
+  <text x="865" y="133" text-anchor="middle" font-size="11" font-weight="bold" fill="#fff">LINUX01</text>
+  <rect x="815" y="152" width="100" height="6" rx="2" fill="#D5EAD4"/>
+  <rect x="815" y="163" width="100" height="6" rx="2" fill="#D5EAD4"/>
+  <rect x="815" y="174" width="100" height="6" rx="2" fill="#D5EAD4"/>
+  <text x="865" y="200" text-anchor="middle" font-size="10" fill="#333">10.0.1.20</text>
+  <text x="865" y="213" text-anchor="middle" font-size="9" fill="#666">Ubuntu Server 24.04</text>
+  <text x="865" y="224" text-anchor="middle" font-size="9" fill="#888">Apache · Samba</text>
+
+  <!-- ===== CONNECTION LINES from servers to VLANs ===== -->
+  <!-- DC01 to Sales -->
+  <line x1="225" y1="230" x2="225" y2="390" stroke="#4A90D9" stroke-width="1" stroke-dasharray="5,3"/>
+  <!-- DC01 to Corporate -->
+  <line x1="225" y1="230" x2="545" y2="390" stroke="#4A90D9" stroke-width="1" stroke-dasharray="5,3"/>
+  <!-- FS01 to Sales -->
+  <line x1="545" y1="230" x2="225" y2="390" stroke="#C0392B" stroke-width="1" stroke-dasharray="5,3"/>
+  <!-- FS01 to Corporate -->
+  <line x1="545" y1="230" x2="545" y2="390" stroke="#C0392B" stroke-width="1" stroke-dasharray="5,3"/>
+
+  <!-- ===== DEPARTMENT VLANs ===== -->
+
+  <!-- Manufacturing VLAN -->
+  <rect x="80" y="380" width="195" height="145" rx="6" fill="#EDF7ED" stroke="#5B8C5A" stroke-width="1.5"/>
+  <text x="178" y="400" text-anchor="middle" font-size="11" font-weight="bold" fill="#2E6B2E">Manufacturing VLAN</text>
+  <text x="178" y="415" text-anchor="middle" font-size="10" fill="#555">10.0.10.0/24</text>
+  <text x="178" y="432" text-anchor="middle" font-size="9" fill="#777">DHCP: .100 – .200</text>
+  <text x="178" y="448" text-anchor="middle" font-size="9" fill="#777">207 Users</text>
+  <text x="178" y="463" text-anchor="middle" font-size="9" fill="#777">Group: Manufacturing-Users</text>
+  <rect x="110" y="472" width="136" height="40" rx="4" fill="#fff" stroke="#5B8C5A" stroke-width="1"/>
+  <text x="178" y="488" text-anchor="middle" font-size="9" fill="#444">No client VM deployed</text>
+  <text x="178" y="502" text-anchor="middle" font-size="9" fill="#888">(Production environment)</text>
+
+  <!-- Sales VLAN -->
+  <rect x="295" y="380" width="195" height="145" rx="6" fill="#FEF4E8" stroke="#E8922A" stroke-width="1.5"/>
+  <text x="393" y="400" text-anchor="middle" font-size="11" font-weight="bold" fill="#A05C10">Sales VLAN</text>
+  <text x="393" y="415" text-anchor="middle" font-size="10" fill="#555">10.0.20.0/24</text>
+  <text x="393" y="432" text-anchor="middle" font-size="9" fill="#777">DHCP: .100 – .200</text>
+  <text x="393" y="448" text-anchor="middle" font-size="9" fill="#777">27 Users</text>
+  <text x="393" y="463" text-anchor="middle" font-size="9" fill="#777">Group: Sales-Users</text>
+  <!-- CLIENT-SALES laptop -->
+  <rect x="325" y="472" width="136" height="40" rx="4" fill="#fff" stroke="#E8922A" stroke-width="1"/>
+  <text x="393" y="488" text-anchor="middle" font-size="9" font-weight="bold" fill="#444">CLIENT-SALES</text>
+  <text x="393" y="502" text-anchor="middle" font-size="9" fill="#888">10.0.20.10 · wbenshoof</text>
+
+  <!-- Corporate VLAN -->
+  <rect x="510" y="380" width="195" height="145" rx="6" fill="#FEFAE8" stroke="#D4AC0D" stroke-width="1.5"/>
+  <text x="608" y="400" text-anchor="middle" font-size="11" font-weight="bold" fill="#7D6608">Corporate VLAN</text>
+  <text x="608" y="415" text-anchor="middle" font-size="10" fill="#555">10.0.30.0/24</text>
+  <text x="608" y="432" text-anchor="middle" font-size="9" fill="#777">DHCP: .100 – .200</text>
+  <text x="608" y="448" text-anchor="middle" font-size="9" fill="#777">23 Users · Finance · HR · Exec</text>
+  <text x="608" y="463" text-anchor="middle" font-size="9" fill="#777">Groups: Finance, HR, Executive</text>
+  <!-- CLIENT-FIN laptop -->
+  <rect x="540" y="472" width="136" height="40" rx="4" fill="#fff" stroke="#D4AC0D" stroke-width="1"/>
+  <text x="608" y="488" text-anchor="middle" font-size="9" font-weight="bold" fill="#444">CLIENT-FIN</text>
+  <text x="608" y="502" text-anchor="middle" font-size="9" fill="#888">10.0.30.10 · dbarber</text>
+
+  <!-- IT-Infrastructure VLAN -->
+  <rect x="725" y="380" width="195" height="145" rx="6" fill="#F3EEF8" stroke="#8E44AD" stroke-width="1.5"/>
+  <text x="823" y="400" text-anchor="middle" font-size="11" font-weight="bold" fill="#5B2C6F">IT-Infrastructure VLAN</text>
+  <text x="823" y="415" text-anchor="middle" font-size="10" fill="#555">10.0.40.0/24</text>
+  <text x="823" y="432" text-anchor="middle" font-size="9" fill="#777">DHCP: .100 – .200</text>
+  <text x="823" y="448" text-anchor="middle" font-size="9" fill="#777">32 Users</text>
+  <text x="823" y="463" text-anchor="middle" font-size="9" fill="#777">Groups: IT-Users · IT-Admins</text>
+  <rect x="755" y="472" width="136" height="40" rx="4" fill="#fff" stroke="#8E44AD" stroke-width="1"/>
+  <text x="823" y="488" text-anchor="middle" font-size="9" fill="#444">No client VM deployed</text>
+  <text x="823" y="502" text-anchor="middle" font-size="9" fill="#888">(Admin access only)</text>
+
+  <!-- ===== GROUP POLICY SECTION ===== -->
+  <rect x="80" y="545" width="940" height="90" rx="6" fill="#FDF2F8" stroke="#C0392B" stroke-width="1.2"/>
+  <text x="100" y="565" font-size="12" font-weight="bold" fill="#922B21">Group Policy Objects (GPOs)</text>
+  <rect x="100" y="575" width="270" height="45" rx="4" fill="#fff" stroke="#C0392B" stroke-width="1"/>
+  <text x="235" y="591" text-anchor="middle" font-size="10" font-weight="bold" fill="#333">Baseline Security Policy</text>
+  <text x="235" y="606" text-anchor="middle" font-size="9" fill="#666">Domain-wide · 12-char password · 90-day expiry · 5-attempt lockout</text>
+  <rect x="390" y="575" width="220" height="45" rx="4" fill="#fff" stroke="#E8922A" stroke-width="1"/>
+  <text x="500" y="591" text-anchor="middle" font-size="10" font-weight="bold" fill="#333">Sales – USB Restrictions</text>
+  <text x="500" y="606" text-anchor="middle" font-size="9" fill="#666">Sales OU · All removable storage denied</text>
+  <rect x="630" y="575" width="210" height="45" rx="4" fill="#fff" stroke="#D4AC0D" stroke-width="1"/>
+  <text x="735" y="591" text-anchor="middle" font-size="10" font-weight="bold" fill="#333">Finance – Screen Lock</text>
+  <text x="735" y="606" text-anchor="middle" font-size="9" fill="#666">Corporate OU · 10-min inactivity lock</text>
+
+  <!-- ===== LEGEND ===== -->
+  <rect x="950" y="380" width="128" height="150" rx="5" fill="#fff" stroke="#ccc" stroke-width="1"/>
+  <text x="1014" y="398" text-anchor="middle" font-size="11" font-weight="bold" fill="#333">Legend</text>
+  <line x1="960" y1="404" x2="1068" y2="404" stroke="#eee" stroke-width="1"/>
+  <rect x="962" y="412" width="12" height="12" rx="2" fill="#EBF3FB" stroke="#4A90D9" stroke-width="1"/>
+  <text x="980" y="423" font-size="9" fill="#444">Management</text>
+  <rect x="962" y="430" width="12" height="12" rx="2" fill="#EDF7ED" stroke="#5B8C5A" stroke-width="1"/>
+  <text x="980" y="441" font-size="9" fill="#444">Manufacturing</text>
+  <rect x="962" y="448" width="12" height="12" rx="2" fill="#FEF4E8" stroke="#E8922A" stroke-width="1"/>
+  <text x="980" y="459" font-size="9" fill="#444">Sales</text>
+  <rect x="962" y="466" width="12" height="12" rx="2" fill="#FEFAE8" stroke="#D4AC0D" stroke-width="1"/>
+  <text x="980" y="477" font-size="9" fill="#444">Corporate</text>
+  <rect x="962" y="484" width="12" height="12" rx="2" fill="#F3EEF8" stroke="#8E44AD" stroke-width="1"/>
+  <text x="980" y="495" font-size="9" fill="#444">IT-Infrastructure</text>
+  <line x1="962" y1="510" x2="974" y2="510" stroke="#4A90D9" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="980" y="514" font-size="9" fill="#444">AD/DNS/DHCP</text>
+  <line x1="962" y1="524" x2="974" y2="524" stroke="#C0392B" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="980" y="528" font-size="9" fill="#444">SMB/File Share</text>
+
+  <!-- Footer -->
+  <line x1="80" y1="648" x2="1020" y2="648" stroke="#ccc" stroke-width="1"/>
+  <text x="550" y="664" text-anchor="middle" font-size="9" fill="#999">AdventureWorks Infrastructure Lab · VirtualBox · Windows Server 2022 · Ubuntu 24.04 · adventureworks.local</text>
+
+</svg>

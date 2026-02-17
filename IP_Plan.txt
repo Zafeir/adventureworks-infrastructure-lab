@@ -1,0 +1,25 @@
+ADVENTUREWORKS NETWORK - IP ADDRESS PLAN
+=========================================
+
+DOMAIN INFORMATION
+Domain Name: adventureworks.local
+NetBIOS Name: ADVENTUREWORKS
+Domain Admin Password: P@ssword2026
+
+MANAGEMENT NETWORK (Servers)
+Network: 10.0.1.0/24
+Gateway: 10.0.1.1
+DNS Server: 10.0.1.10
+
+Server IP Assignments:
+- DC01 (Domain Controller):  10.0.1.10
+- FS01 (File Server):         10.0.1.11
+- LINUX01 (Linux Server):     10.0.1.20
+
+DEPARTMENT NETWORKS (To be renamed based on AdventureWorks data)
+Network 1 (Dept1): 10.0.10.0/24
+Network 2 (Dept2): 10.0.20.0/24
+Network 3 (Dept3): 10.0.30.0/24
+Network 4 (Dept4): 10.0.40.0/24
+
+Note: Department networks will be configured with DHCP after we analyze AdventureWorks database
