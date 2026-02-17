@@ -273,7 +273,7 @@ This repository serves as a reference implementation. All scripts are functional
 ## 🔗 Contact
 
 **LinkedIn:** https://www.linkedin.com/in/moises-o%E2%80%99neal-1ab8308b/
-**Email:** Moisesoarias1@gmail.com
+**Email:** Moises3874@gmail.com
 
 ---
 
